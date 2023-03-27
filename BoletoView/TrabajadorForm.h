@@ -139,6 +139,18 @@ namespace BoletoView {
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->DNI = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Nombre = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->NumeroLicencia = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
@@ -151,17 +163,10 @@ namespace BoletoView {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
@@ -179,7 +184,12 @@ namespace BoletoView {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->textBox18 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox20 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox21 = (gcnew System::Windows::Forms::TextBox());
@@ -196,22 +206,12 @@ namespace BoletoView {
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->DNI = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Nombre = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->NumeroLicencia = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
-			this->tabPage2->SuspendLayout();
-			this->tabPage3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			this->tabPage3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -256,6 +256,91 @@ namespace BoletoView {
 			this->tabPage1->Text = L"Conductor";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->AllowUserToOrderColumns = true;
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
+				this->DNI, this->Nombre,
+					this->NumeroLicencia
+			});
+			this->dataGridView1->Location = System::Drawing::Point(6, 281);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(445, 187);
+			this->dataGridView1->TabIndex = 19;
+			// 
+			// DNI
+			// 
+			this->DNI->HeaderText = L"DNI";
+			this->DNI->Name = L"DNI";
+			// 
+			// Nombre
+			// 
+			this->Nombre->HeaderText = L"Nombre";
+			this->Nombre->Name = L"Nombre";
+			this->Nombre->Width = 200;
+			// 
+			// NumeroLicencia
+			// 
+			this->NumeroLicencia->HeaderText = L"N. de Licencia";
+			this->NumeroLicencia->Name = L"NumeroLicencia";
+			// 
+			// textBox8
+			// 
+			this->textBox8->Location = System::Drawing::Point(199, 196);
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->Size = System::Drawing::Size(166, 20);
+			this->textBox8->TabIndex = 18;
+			// 
+			// textBox7
+			// 
+			this->textBox7->Location = System::Drawing::Point(199, 170);
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(166, 20);
+			this->textBox7->TabIndex = 17;
+			// 
+			// textBox6
+			// 
+			this->textBox6->Location = System::Drawing::Point(199, 144);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(166, 20);
+			this->textBox6->TabIndex = 16;
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(199, 119);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(166, 20);
+			this->textBox5->TabIndex = 15;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(199, 93);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(166, 20);
+			this->textBox4->TabIndex = 14;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(199, 67);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(166, 20);
+			this->textBox3->TabIndex = 13;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(199, 41);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(166, 20);
+			this->textBox2->TabIndex = 12;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(199, 15);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(166, 20);
+			this->textBox1->TabIndex = 11;
+			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
@@ -264,7 +349,7 @@ namespace BoletoView {
 			this->label8->Size = System::Drawing::Size(102, 13);
 			this->label8->TabIndex = 10;
 			this->label8->Text = L"Numero de Licencia";
-			this->label8->Click += gcnew System::EventHandler(this, &TrabajadorForm::label8_Click);
+			//this->label8->Click += gcnew System::EventHandler(this, &TrabajadorForm::label8_Click);
 			// 
 			// label7
 			// 
@@ -328,7 +413,7 @@ namespace BoletoView {
 			this->label1->Size = System::Drawing::Size(26, 13);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"DNI";
-			this->label1->Click += gcnew System::EventHandler(this, &TrabajadorForm::label1_Click);
+			//this->label1->Click += gcnew System::EventHandler(this, &TrabajadorForm::label1_Click);
 			// 
 			// button3
 			// 
@@ -338,6 +423,7 @@ namespace BoletoView {
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Eliminar";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &TrabajadorForm::button3_Click);
 			// 
 			// button2
 			// 
@@ -347,6 +433,7 @@ namespace BoletoView {
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Actualizar";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &TrabajadorForm::button2_Click);
 			// 
 			// button1
 			// 
@@ -386,103 +473,6 @@ namespace BoletoView {
 			this->tabPage2->Text = L"Vendedor";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
-			// tabPage3
-			// 
-			this->tabPage3->Controls->Add(this->dateTimePicker1);
-			this->tabPage3->Controls->Add(this->dataGridView3);
-			this->tabPage3->Controls->Add(this->textBox18);
-			this->tabPage3->Controls->Add(this->textBox20);
-			this->tabPage3->Controls->Add(this->textBox21);
-			this->tabPage3->Controls->Add(this->textBox22);
-			this->tabPage3->Controls->Add(this->textBox23);
-			this->tabPage3->Controls->Add(this->textBox24);
-			this->tabPage3->Controls->Add(this->label18);
-			this->tabPage3->Controls->Add(this->label19);
-			this->tabPage3->Controls->Add(this->label20);
-			this->tabPage3->Controls->Add(this->label21);
-			this->tabPage3->Controls->Add(this->label22);
-			this->tabPage3->Controls->Add(this->label23);
-			this->tabPage3->Controls->Add(this->label24);
-			this->tabPage3->Controls->Add(this->button7);
-			this->tabPage3->Controls->Add(this->button8);
-			this->tabPage3->Controls->Add(this->button9);
-			this->tabPage3->Location = System::Drawing::Point(4, 22);
-			this->tabPage3->Name = L"tabPage3";
-			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage3->Size = System::Drawing::Size(457, 474);
-			this->tabPage3->TabIndex = 2;
-			this->tabPage3->Text = L"Administrador";
-			this->tabPage3->UseVisualStyleBackColor = true;
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(199, 15);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(166, 20);
-			this->textBox1->TabIndex = 11;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(199, 41);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(166, 20);
-			this->textBox2->TabIndex = 12;
-			// 
-			// textBox3
-			// 
-			this->textBox3->Location = System::Drawing::Point(199, 67);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(166, 20);
-			this->textBox3->TabIndex = 13;
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(199, 93);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(166, 20);
-			this->textBox4->TabIndex = 14;
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(199, 119);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(166, 20);
-			this->textBox5->TabIndex = 15;
-			// 
-			// textBox6
-			// 
-			this->textBox6->Location = System::Drawing::Point(199, 144);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(166, 20);
-			this->textBox6->TabIndex = 16;
-			// 
-			// textBox7
-			// 
-			this->textBox7->Location = System::Drawing::Point(199, 170);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(166, 20);
-			this->textBox7->TabIndex = 17;
-			// 
-			// textBox8
-			// 
-			this->textBox8->Location = System::Drawing::Point(199, 196);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(166, 20);
-			this->textBox8->TabIndex = 18;
-			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->AllowUserToOrderColumns = true;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
-				this->DNI, this->Nombre,
-					this->NumeroLicencia
-			});
-			this->dataGridView1->Location = System::Drawing::Point(6, 281);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(445, 187);
-			this->dataGridView1->TabIndex = 19;
-			// 
 			// dataGridView2
 			// 
 			this->dataGridView2->AllowUserToOrderColumns = true;
@@ -495,6 +485,22 @@ namespace BoletoView {
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->Size = System::Drawing::Size(445, 187);
 			this->dataGridView2->TabIndex = 39;
+			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this->dataGridViewTextBoxColumn1->HeaderText = L"DNI";
+			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			this->dataGridViewTextBoxColumn2->HeaderText = L"Nombre";
+			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
+			this->dataGridViewTextBoxColumn2->Width = 200;
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			this->dataGridViewTextBoxColumn3->HeaderText = L"Centro de Estudios";
+			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
 			// 
 			// textBox10
 			// 
@@ -616,6 +622,7 @@ namespace BoletoView {
 			this->button4->TabIndex = 22;
 			this->button4->Text = L"Eliminar";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &TrabajadorForm::button4_Click);
 			// 
 			// button5
 			// 
@@ -625,6 +632,7 @@ namespace BoletoView {
 			this->button5->TabIndex = 21;
 			this->button5->Text = L"Actualizar";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &TrabajadorForm::button5_Click);
 			// 
 			// button6
 			// 
@@ -634,6 +642,42 @@ namespace BoletoView {
 			this->button6->TabIndex = 20;
 			this->button6->Text = L"Aceptar";
 			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &TrabajadorForm::button6_Click);
+			// 
+			// tabPage3
+			// 
+			this->tabPage3->Controls->Add(this->dateTimePicker1);
+			this->tabPage3->Controls->Add(this->dataGridView3);
+			this->tabPage3->Controls->Add(this->textBox18);
+			this->tabPage3->Controls->Add(this->textBox20);
+			this->tabPage3->Controls->Add(this->textBox21);
+			this->tabPage3->Controls->Add(this->textBox22);
+			this->tabPage3->Controls->Add(this->textBox23);
+			this->tabPage3->Controls->Add(this->textBox24);
+			this->tabPage3->Controls->Add(this->label18);
+			this->tabPage3->Controls->Add(this->label19);
+			this->tabPage3->Controls->Add(this->label20);
+			this->tabPage3->Controls->Add(this->label21);
+			this->tabPage3->Controls->Add(this->label22);
+			this->tabPage3->Controls->Add(this->label23);
+			this->tabPage3->Controls->Add(this->label24);
+			this->tabPage3->Controls->Add(this->button7);
+			this->tabPage3->Controls->Add(this->button8);
+			this->tabPage3->Controls->Add(this->button9);
+			this->tabPage3->Location = System::Drawing::Point(4, 22);
+			this->tabPage3->Name = L"tabPage3";
+			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage3->Size = System::Drawing::Size(457, 474);
+			this->tabPage3->TabIndex = 2;
+			this->tabPage3->Text = L"Administrador";
+			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
+			// dateTimePicker1
+			// 
+			this->dateTimePicker1->Location = System::Drawing::Point(199, 141);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(200, 20);
+			this->dateTimePicker1->TabIndex = 40;
 			// 
 			// dataGridView3
 			// 
@@ -647,6 +691,22 @@ namespace BoletoView {
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->Size = System::Drawing::Size(445, 187);
 			this->dataGridView3->TabIndex = 39;
+			// 
+			// dataGridViewTextBoxColumn4
+			// 
+			this->dataGridViewTextBoxColumn4->HeaderText = L"DNI";
+			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
+			// 
+			// dataGridViewTextBoxColumn5
+			// 
+			this->dataGridViewTextBoxColumn5->HeaderText = L"Nombre";
+			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
+			this->dataGridViewTextBoxColumn5->Width = 200;
+			// 
+			// dataGridViewTextBoxColumn6
+			// 
+			this->dataGridViewTextBoxColumn6->HeaderText = L"Fecha de Nacimiento";
+			this->dataGridViewTextBoxColumn6->Name = L"dataGridViewTextBoxColumn6";
 			// 
 			// textBox18
 			// 
@@ -761,6 +821,7 @@ namespace BoletoView {
 			this->button7->TabIndex = 22;
 			this->button7->Text = L"Eliminar";
 			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &TrabajadorForm::button7_Click);
 			// 
 			// button8
 			// 
@@ -770,6 +831,7 @@ namespace BoletoView {
 			this->button8->TabIndex = 21;
 			this->button8->Text = L"Actualizar";
 			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &TrabajadorForm::button8_Click);
 			// 
 			// button9
 			// 
@@ -779,61 +841,7 @@ namespace BoletoView {
 			this->button9->TabIndex = 20;
 			this->button9->Text = L"Aceptar";
 			this->button9->UseVisualStyleBackColor = true;
-			// 
-			// dateTimePicker1
-			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(199, 141);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(200, 20);
-			this->dateTimePicker1->TabIndex = 40;
-			// 
-			// dataGridViewTextBoxColumn4
-			// 
-			this->dataGridViewTextBoxColumn4->HeaderText = L"DNI";
-			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
-			// 
-			// dataGridViewTextBoxColumn5
-			// 
-			this->dataGridViewTextBoxColumn5->HeaderText = L"Nombre";
-			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
-			this->dataGridViewTextBoxColumn5->Width = 200;
-			// 
-			// dataGridViewTextBoxColumn6
-			// 
-			this->dataGridViewTextBoxColumn6->HeaderText = L"Fecha de Nacimiento";
-			this->dataGridViewTextBoxColumn6->Name = L"dataGridViewTextBoxColumn6";
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this->dataGridViewTextBoxColumn1->HeaderText = L"DNI";
-			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
-			// 
-			// dataGridViewTextBoxColumn2
-			// 
-			this->dataGridViewTextBoxColumn2->HeaderText = L"Nombre";
-			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
-			this->dataGridViewTextBoxColumn2->Width = 200;
-			// 
-			// dataGridViewTextBoxColumn3
-			// 
-			this->dataGridViewTextBoxColumn3->HeaderText = L"Centro de Estudios";
-			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
-			// 
-			// DNI
-			// 
-			this->DNI->HeaderText = L"DNI";
-			this->DNI->Name = L"DNI";
-			// 
-			// Nombre
-			// 
-			this->Nombre->HeaderText = L"Nombre";
-			this->Nombre->Name = L"Nombre";
-			this->Nombre->Width = 200;
-			// 
-			// NumeroLicencia
-			// 
-			this->NumeroLicencia->HeaderText = L"N. de Licencia";
-			this->NumeroLicencia->Name = L"NumeroLicencia";
+			this->button9->Click += gcnew System::EventHandler(this, &TrabajadorForm::button9_Click);
 			// 
 			// TrabajadorForm
 			// 
@@ -846,19 +854,158 @@ namespace BoletoView {
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->tabPage2->ResumeLayout(false);
 			this->tabPage2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->tabPage3->ResumeLayout(false);
 			this->tabPage3->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
 			this->ResumeLayout(false);
 
 		}
-
+	//Conductor Aceptar
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		Conductor^ conductor = gcnew Conductor();
+		conductor->Dni = textBox1->Text;
+		conductor->Nombre = textBox2->Text;
+		conductor->Direccion = textBox3->Text;
+		conductor->Contrasenha = textBox4->Text;
+		conductor->Salario = Double::Parse(textBox5->Text);
+		conductor->Anho_experiencia = Int32::Parse(textBox6->Text);
+		conductor->Numero_telefono = textBox7->Text;
+		conductor->Numero_licencia = Int32::Parse(textBox8->Text);
+		BoletoManager::AgregarConductor(conductor);
+		llenarTablaConductor();
 	}
+	//Conductor Actualizar
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		Conductor^ conductor = gcnew Conductor();
+		conductor->Dni = textBox1->Text;
+		conductor->Nombre = textBox2->Text;
+		conductor->Direccion = textBox3->Text;
+		conductor->Contrasenha = textBox4->Text;
+		conductor->Salario = Double::Parse(textBox5->Text);
+		conductor->Anho_experiencia = Int32::Parse(textBox6->Text);
+		conductor->Numero_telefono = textBox7->Text;
+		conductor->Numero_licencia = Int32::Parse(textBox8->Text);
+		BoletoManager::ActualizarConductor(conductor);
+		llenarTablaConductor();
+	}
+	//Conductor Eliminar
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ dni = textBox1->Text;
+		BoletoManager::EliminarConductor(dni);
+		llenarTablaConductor();
+	}
+	//LLenar la tabla Conductor
+	public:
+		void llenarTablaConductor() {
+			List<Conductor^>^ ListaConductor = BoletoManager::MostrarTodosConductores();
+			dataGridView1->Rows->Clear();
+			for (int i = 0; i < ListaConductor->Count; i++) {
+				dataGridView1->Rows->Add(
+					gcnew array<String^>{
+					ListaConductor[i]->Dni,
+						ListaConductor[i]->Nombre,
+						"" + ListaConductor[i]->Numero_licencia
+				}
+				);
+			}
+		}
+	//Vendedor Aceptar
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		Vendedor^ vendedor = gcnew Vendedor();
+		vendedor->Dni = textBox16->Text;
+		vendedor->Nombre = textBox15->Text;
+		vendedor->Direccion = textBox14->Text;
+		vendedor->Contrasenha = textBox13->Text;
+		vendedor->Salario = Double::Parse(textBox12->Text);
+		vendedor->Email = textBox11->Text;
+		vendedor->Centro_estudios = textBox10->Text;
+		BoletoManager::AgregarVendedor(vendedor);
+		llenarTablaVendedor();
+	}
+	//vandedor Actualizar
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		Vendedor^ vendedor = gcnew Vendedor();
+		vendedor->Dni = textBox16->Text;
+		vendedor->Nombre = textBox15->Text;
+		vendedor->Direccion = textBox14->Text;
+		vendedor->Contrasenha = textBox13->Text;
+		vendedor->Salario = Double::Parse(textBox12->Text);
+		vendedor->Email = textBox11->Text;
+		vendedor->Centro_estudios = textBox10->Text;
+		BoletoManager::ActualizarVendedor(vendedor);
+		llenarTablaVendedor();
+	}
+	//Vendedor eliminar
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ dni = textBox16->Text;
+		BoletoManager::EliminarVendedor(dni);
+		llenarTablaVendedor();
+	}
+	//LLenar la tabla Vendedor
+	public:
+		void llenarTablaVendedor() {
+			List<Vendedor^>^ ListaVendedor = BoletoManager::MostrarTodosVendedores();
+			dataGridView2->Rows->Clear();
+			for (int i = 0; i < ListaVendedor->Count; i++) {
+				dataGridView2->Rows->Add(
+					gcnew array<String^>{
+					ListaVendedor[i]->Dni,
+						ListaVendedor[i]->Nombre,
+						ListaVendedor[i]->Centro_estudios
+				}
+				);
+			}
+		}
+	//Administrador Aceptar
+	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+		Administrador^ administrador = gcnew Administrador();
+		administrador->Dni = textBox24->Text;
+		administrador->Nombre = textBox23->Text;
+		administrador->Direccion = textBox22->Text;
+		administrador->Contrasenha = textBox21->Text;
+		administrador->Salario = Double::Parse(textBox20->Text);
+		administrador->Fecha_nacimiento = dateTimePicker1->Value;
+		administrador->Numero_telefono = textBox10->Text;
+		BoletoManager::AgregarAdministrador(administrador);
+		llenarTablaAdministradores();
+	}
+	//Adminstrador Actualizar
+	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+		Administrador^ administrador = gcnew Administrador();
+		administrador->Dni = textBox24->Text;
+		administrador->Nombre = textBox23->Text;
+		administrador->Direccion = textBox22->Text;
+		administrador->Contrasenha = textBox21->Text;
+		administrador->Salario = Double::Parse(textBox20->Text);
+		administrador->Fecha_nacimiento = dateTimePicker1->Value;
+		administrador->Numero_telefono = textBox10->Text;
+		BoletoManager::ActualizarAdministrador(administrador);
+		llenarTablaAdministradores();
+	}
+	//Administrador Eliminar
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ dni = textBox24->Text;
+		BoletoManager::EliminarAdministrador(dni);
+		llenarTablaAdministradores();
+	}
+	//LLenar la tabla Administradores
+	public:
+		void llenarTablaAdministradores() {
+			List<Administrador^>^ ListaAdministrador = BoletoManager::MostrarTodosAdministradores();
+			dataGridView3->Rows->Clear();
+			for (int i = 0; i < ListaAdministrador->Count; i++) {
+				dataGridView3->Rows->Add(
+					gcnew array<String^>{
+					ListaAdministrador[i]->Dni,
+						ListaAdministrador[i]->Nombre,
+						""+ListaAdministrador[i]->Fecha_nacimiento
+				}
+				);
+			}
+		}
 };
 }
