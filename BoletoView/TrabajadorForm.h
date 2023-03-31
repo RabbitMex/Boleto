@@ -877,6 +877,7 @@ namespace BoletoView {
 		conductor->Numero_licencia = Int32::Parse(textBox8->Text);
 		BoletoManager::AgregarConductor(conductor);
 		llenarTablaConductor();
+		limpiarCamposConductor();
 	}
 	//Conductor Actualizar
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -891,15 +892,18 @@ namespace BoletoView {
 		conductor->Numero_licencia = Int32::Parse(textBox8->Text);
 		BoletoManager::ActualizarConductor(conductor);
 		llenarTablaConductor();
+		limpiarCamposConductor();
 	}
 	//Conductor Eliminar
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ dni = textBox1->Text;
 		BoletoManager::EliminarConductor(dni);
 		llenarTablaConductor();
+		limpiarCamposConductor();
 	}
-	//LLenar la tabla Conductor
+	
 	public:
+		//LLenar la tabla Conductor
 		void llenarTablaConductor() {
 			List<Conductor^>^ ListaConductor = BoletoManager::MostrarTodosConductores();
 			dataGridView1->Rows->Clear();
@@ -913,6 +917,17 @@ namespace BoletoView {
 				);
 			}
 		}
+		//Limpar los campos para poder ingresar otro dato
+		void limpiarCamposConductor() {
+			textBox1->Clear();
+			textBox2->Clear();
+			textBox3->Clear();
+			textBox4->Clear();
+			textBox5->Clear();
+			textBox6->Clear();
+			textBox7->Clear();
+			textBox8->Clear();
+		}
 	//Vendedor Aceptar
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 		Vendedor^ vendedor = gcnew Vendedor();
@@ -925,6 +940,7 @@ namespace BoletoView {
 		vendedor->Centro_estudios = textBox10->Text;
 		BoletoManager::AgregarVendedor(vendedor);
 		llenarTablaVendedor();
+		limpiarCamposVendedor();
 	}
 	//vandedor Actualizar
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -938,12 +954,14 @@ namespace BoletoView {
 		vendedor->Centro_estudios = textBox10->Text;
 		BoletoManager::ActualizarVendedor(vendedor);
 		llenarTablaVendedor();
+		limpiarCamposVendedor();
 	}
 	//Vendedor eliminar
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ dni = textBox16->Text;
 		BoletoManager::EliminarVendedor(dni);
 		llenarTablaVendedor();
+		limpiarCamposVendedor();
 	}
 	//LLenar la tabla Vendedor
 	public:
@@ -960,6 +978,16 @@ namespace BoletoView {
 				);
 			}
 		}
+		//Limpiar los campos de vendedor
+		void limpiarCamposVendedor() {
+			textBox16->Clear();
+			textBox15->Clear();
+			textBox14->Clear();
+			textBox13->Clear();
+			textBox12->Clear();
+			textBox11->Clear();
+			textBox10->Clear();
+		}
 	//Administrador Aceptar
 	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
 		Administrador^ administrador = gcnew Administrador();
@@ -972,6 +1000,7 @@ namespace BoletoView {
 		administrador->Numero_telefono = textBox10->Text;
 		BoletoManager::AgregarAdministrador(administrador);
 		llenarTablaAdministradores();
+		limpiarCamposAdministrador();
 	}
 	//Adminstrador Actualizar
 	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -985,12 +1014,14 @@ namespace BoletoView {
 		administrador->Numero_telefono = textBox10->Text;
 		BoletoManager::ActualizarAdministrador(administrador);
 		llenarTablaAdministradores();
+		limpiarCamposAdministrador();
 	}
 	//Administrador Eliminar
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ dni = textBox24->Text;
 		BoletoManager::EliminarAdministrador(dni);
 		llenarTablaAdministradores();
+		limpiarCamposAdministrador();
 	}
 	//LLenar la tabla Administradores
 	public:
@@ -1002,10 +1033,21 @@ namespace BoletoView {
 					gcnew array<String^>{
 					ListaAdministrador[i]->Dni,
 						ListaAdministrador[i]->Nombre,
-						""+ListaAdministrador[i]->Fecha_nacimiento
+						//""+ListaAdministrador[i]->Fecha_nacimiento
+						ListaAdministrador[i]->Fecha_nacimiento.ToShortDateString()
 				}
 				);
 			}
+		}
+		//Limpiar los campos para el Administrador
+		void limpiarCamposAdministrador(){
+			textBox24->Clear();
+			textBox23->Clear();
+			textBox22->Clear();
+			textBox21->Clear();
+			textBox20->Clear();
+			dateTimePicker1->ResetText();
+			textBox18->Clear();
 		}
 };
 }

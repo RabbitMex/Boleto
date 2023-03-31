@@ -4,6 +4,7 @@ using namespace System;
 using namespace System::Collections::Generic;
 
 namespace BoletoModel {
+    [Serializable]
     public ref class Trabajador
     {
     private:
@@ -15,7 +16,7 @@ namespace BoletoModel {
         property double Salario;
         property String^ Contrasenha;
     };
-
+    [Serializable]
     public ref class Pasajero
     {
     private:
@@ -26,7 +27,7 @@ namespace BoletoModel {
         property DateTime Fecha_nacimiento;
         property String^ Genero;
     };
-
+    [Serializable]
     public ref class Producto
     {
     private:
@@ -38,7 +39,7 @@ namespace BoletoModel {
         property int Stock;
         property String^ Descripcion;
     };
-
+    [Serializable]
     public ref class Vendedor : public Trabajador
     {
     private:
@@ -47,7 +48,7 @@ namespace BoletoModel {
         property String^ Email;
         property String^ Centro_estudios;
     };
-
+    [Serializable]
     public ref class Conductor : public Trabajador
     {
     private:
@@ -57,7 +58,7 @@ namespace BoletoModel {
         property String^ Numero_telefono;
         property int Numero_licencia;
     };
-
+    [Serializable]
     public ref class Administrador : public Trabajador
     {
     private:
@@ -66,7 +67,7 @@ namespace BoletoModel {
         property DateTime Fecha_nacimiento;
         property String^ Numero_telefono;
     };
-
+    [Serializable]
     public ref class Viaje
     {
     private:
@@ -79,7 +80,7 @@ namespace BoletoModel {
         property Conductor^ Conductor;
         property int Numero_asientos;
     };
-
+    [Serializable]
     public ref class Detalle_producto
     {
     private:
@@ -89,7 +90,7 @@ namespace BoletoModel {
         property double SubTotal;
         property Producto^ Producto;
     };
-
+    [Serializable]
     public ref class Boleto
     {
     private:

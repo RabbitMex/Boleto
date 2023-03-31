@@ -1,8 +1,10 @@
 #include "pch.h"
 
 #include "BoletoController.h"
+//using namespace BoletoController::BoletoManager;
 
 void BoletoController::BoletoManager::AgregarPasajero(Pasajero^ pasajero)
+//void AgregarPasajero(Pasajero^ pasajero)
 {
     pasajeroDB->ListDB->Add(pasajero);
 }

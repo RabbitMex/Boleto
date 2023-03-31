@@ -5,30 +5,40 @@ using namespace System::Collections::Generic;
 using namespace BoletoModel;
 
 namespace BoletoController {
+	[Serializable]
 	public ref class PasajeroDB
 	{
 	public:
 		List<Pasajero^>^ ListDB = gcnew List<Pasajero^>();
+		void GuardarEnArchivoBinario();//Lo que cambia es con que clase y con que lista trabaja el metodo.
+		//en ete caso esta en la clase PasajeroDB y trabaja con la listaDB que contien pasajeros.
+		void ExtraerDeArchivoBinario();
 	};
-
+	[Serializable]
 	public ref class VendedorDB
 	{
 	public:
 		List<Vendedor^>^ ListDB = gcnew List<Vendedor^>();
+		void GuardarEnArchivoBinario();
+		void ExtraerDeArchivoBinario();
 	};
-
+	[Serializable]
 	public ref class ConductorDB
 	{
 	public:
 		List<Conductor^>^ ListDB = gcnew List<Conductor^>();
+		void GuardarEnArchivoBinario();
+		void ExtraerDeArchivoBinario();
 	};
-
+	[Serializable]
 	public ref class AdministradorDB
 	{
 	public:
 		List<Administrador^>^ ListDB = gcnew List<Administrador^>();
+		void GuardarEnArchivoBinario();
+		void ExtraerDeArchivoBinario();
 	};
-
+	//[Serializable], no es necesario porque no se realizara la serilizacion
 	public ref class BoletoManager
 	{
 	private:

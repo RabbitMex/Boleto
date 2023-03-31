@@ -290,6 +290,7 @@ namespace BoletoView {
 		
 		BoletoManager::AgregarPasajero(p);
 		llenarTablaPasajeros();
+		LimpiarDatos();//Limpiar los campos
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		Pasajero^ p = gcnew Pasajero();
@@ -312,12 +313,14 @@ namespace BoletoView {
 		}
 		BoletoManager::ActualizarPasajero(p);
 		llenarTablaPasajeros();
+		LimpiarDatos();//Limpiar los campos
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ dni;
 		dni = textBox1->Text;
 		BoletoManager::EliminarPasajero(dni);
 		llenarTablaPasajeros();
+		LimpiarDatos();//Limpiar los campos
 	}
 	public:
 		void llenarTablaPasajeros() {
@@ -352,5 +355,18 @@ namespace BoletoView {
 			else if (p->Genero == "Femenino") radioButton2->Checked = true;
 		}
 	}
+	public:
+		/**
+		* Limpiar los campos despues de que se agregue, modifique o elimine algun
+		* registro.
+		* Limpiar los campos de entrada.
+		*/
+		void LimpiarDatos() {
+			textBox1->Clear();
+			textBox2->Clear();
+			dateTimePicker1->ResetText();
+			radioButton1->Checked = false;
+			radioButton2->Checked = false;
+		}
 };
 }
