@@ -1,12 +1,17 @@
 #include "pch.h"
 
 #include "BoletoController.h"
+using namespace System::IO;//clases para el flujo de entrada y salida
+using namespace System::Runtime::Serialization;
+using namespace System::Runtime::Serialization::Formatters::Binary;
+
 //using namespace BoletoController::BoletoManager;
 
 void BoletoController::BoletoManager::AgregarPasajero(Pasajero^ pasajero)
 //void AgregarPasajero(Pasajero^ pasajero)
 {
     pasajeroDB->ListDB->Add(pasajero);
+    pasajeroDB->GuardarEnArchivoBinario();
 }
 
 void BoletoController::BoletoManager::ActualizarPasajero(Pasajero^ pasajero)
@@ -16,6 +21,7 @@ void BoletoController::BoletoManager::ActualizarPasajero(Pasajero^ pasajero)
             pasajeroDB->ListDB[i]->Nombre = pasajero->Nombre;
             pasajeroDB->ListDB[i]->Fecha_nacimiento = pasajero->Fecha_nacimiento;
             pasajeroDB->ListDB[i]->Genero = pasajero->Genero;
+            pasajeroDB->GuardarEnArchivoBinario();
             break;
         }
     }
@@ -27,6 +33,7 @@ void BoletoController::BoletoManager::EliminarPasajero(String^ dni)
         if ( pasajeroDB->ListDB[i]->Dni == dni) {
             //eliminar ese elemento
             pasajeroDB->ListDB->RemoveAt(i);
+            pasajeroDB->GuardarEnArchivoBinario();
             break;
         }
     }
@@ -34,6 +41,7 @@ void BoletoController::BoletoManager::EliminarPasajero(String^ dni)
 
 Pasajero^ BoletoController::BoletoManager::BuscarPasajeroPorDni(String^ dni)
 {
+    pasajeroDB->ExtraerDeArchivoBinario();
     for (int i = 0; i < pasajeroDB->ListDB->Count; i++) {
         if (pasajeroDB->ListDB[i]->Dni == dni) {
             return pasajeroDB->ListDB[i];
@@ -43,6 +51,7 @@ Pasajero^ BoletoController::BoletoManager::BuscarPasajeroPorDni(String^ dni)
 
 List<Pasajero^>^ BoletoController::BoletoManager::MostrarTodosPasajeros()
 {
+    pasajeroDB->ExtraerDeArchivoBinario();
     return pasajeroDB->ListDB;
 }
 
@@ -184,4 +193,80 @@ Administrador^ BoletoController::BoletoManager::BuscarAdministradorPorDni(String
 List<Administrador^>^ BoletoController::BoletoManager::MostrarTodosAdministradores()
 {
     return administradorDB->ListDB;
+}
+
+void BoletoController::PasajeroDB::GuardarEnArchivoBinario()
+{
+    Stream^ stream = File::Open("pasajero.bin", FileMode::Create);
+    BinaryFormatter^ bFormatter = gcnew BinaryFormatter();
+    bFormatter->Serialize(stream, ListDB);
+    stream->Close();
+}
+
+void BoletoController::PasajeroDB::ExtraerDeArchivoBinario()
+{
+    //Primero verificar si el archivo existe
+    if (File::Exists("pasajero.bin")) {
+        Stream^ stream = File::Open("pasajero.bin", FileMode::Open);
+        BinaryFormatter^ bFormatter = gcnew BinaryFormatter();
+        ListDB = (List<Pasajero^>^) bFormatter->Deserialize(stream);
+        stream->Close();
+    }
+}
+
+void BoletoController::VendedorDB::GuardarEnArchivoBinario()
+{
+    Stream^ stream = File::Open("vendedor.bin", FileMode::Create);
+    BinaryFormatter^ bFormatter = gcnew BinaryFormatter();
+    bFormatter->Serialize(stream, ListDB);
+    stream->Close();
+}
+
+void BoletoController::VendedorDB::ExtraerDeArchivoBinario()
+{
+    //Primero verificar si el archivo existe
+    if (File::Exists("vendedor.bin")) {
+        Stream^ stream = File::Open("vendedor.bin", FileMode::Open);
+        BinaryFormatter^ bFormatter = gcnew BinaryFormatter();
+        ListDB = (List<Vendedor^>^) bFormatter->Deserialize(stream);
+        stream->Close();
+    }
+}
+
+void BoletoController::ConductorDB::GuardarEnArchivoBinario()
+{
+    Stream^ stream = File::Open("conductor.bin", FileMode::Create);
+    BinaryFormatter^ bFormatter = gcnew BinaryFormatter();
+    bFormatter->Serialize(stream, ListDB);
+    stream->Close();
+}
+
+void BoletoController::ConductorDB::ExtraerDeArchivoBinario()
+{
+    //Primero verificar si el archivo existe
+    if (File::Exists("conductor.bin")) {
+        Stream^ stream = File::Open("conductor.bin", FileMode::Open);
+        BinaryFormatter^ bFormatter = gcnew BinaryFormatter();
+        ListDB = (List<Conductor^>^) bFormatter->Deserialize(stream);
+        stream->Close();
+    }
+}
+
+void BoletoController::AdministradorDB::GuardarEnArchivoBinario()
+{
+    Stream^ stream = File::Open("administrador.bin", FileMode::Create);
+    BinaryFormatter^ bFormatter = gcnew BinaryFormatter();
+    bFormatter->Serialize(stream, ListDB);
+    stream->Close();
+}
+
+void BoletoController::AdministradorDB::ExtraerDeArchivoBinario()
+{
+    //Primero verificar si el archivo existe
+    if (File::Exists("administrador.bin")) {
+        Stream^ stream = File::Open("administrador.bin", FileMode::Open);
+        BinaryFormatter^ bFormatter = gcnew BinaryFormatter();
+        ListDB = (List<Administrador^>^) bFormatter->Deserialize(stream);
+        stream->Close();
+    }
 }
