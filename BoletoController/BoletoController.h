@@ -38,6 +38,14 @@ namespace BoletoController {
 		void GuardarEnArchivoBinario();
 		void ExtraerDeArchivoBinario();
 	};
+	[Serializable]
+	public ref class ViajeDB
+	{
+	public:
+		List<Viaje^>^ ListDB = gcnew List<Viaje^>();
+		void GuardarEnArchivoBinario();
+		void ExtraerDeArchivoBinario();
+	};
 	//[Serializable], no es necesario porque no se realizara la serilizacion
 	public ref class BoletoManager
 	{
@@ -46,6 +54,7 @@ namespace BoletoController {
 		static VendedorDB^ vendedorDB = gcnew VendedorDB();
 		static ConductorDB^ conductorDB = gcnew ConductorDB();
 		static AdministradorDB^ administradorDB = gcnew AdministradorDB();
+		static ViajeDB^ viajeDB = gcnew ViajeDB();
 	public:
 		static void AgregarPasajero(Pasajero^);
 		static void ActualizarPasajero(Pasajero^);
@@ -70,7 +79,12 @@ namespace BoletoController {
 		static void EliminarAdministrador(String^ dni);
 		static Administrador^ BuscarAdministradorPorDni(String^ dni);
 		static List<Administrador^>^ MostrarTodosAdministradores();
-	
+
+		static void AgregarViaje(Viaje^);
+		static void ActualizarViaje(Viaje^);
+		//static void EliminarViaje(String^ dni);
+		static Viaje^ BuscarViajePorCodigo(int codigo);
+		static List<Viaje^>^ MostrarTodosViajes();
 	};
 
 }

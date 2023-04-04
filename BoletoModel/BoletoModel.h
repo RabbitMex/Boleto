@@ -73,6 +73,7 @@ namespace BoletoModel {
     private:
         /* data */
     public:
+        property int codigo;
         property String^ Origen;
         property String^ Destino;
         property DateTime Fecha_viaje;

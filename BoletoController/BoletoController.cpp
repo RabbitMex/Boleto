@@ -64,6 +64,7 @@ List<Pasajero^>^ BoletoManager::MostrarTodosPasajeros()
 void BoletoManager::AgregarConductor(Conductor^ conductor)
 {
     conductorDB->ListDB->Add(conductor);
+    conductorDB->GuardarEnArchivoBinario();
 }
 
 //void BoletoController::BoletoManager::ActualizarConductor(Conductor^ conductor)
@@ -79,7 +80,7 @@ void BoletoManager::ActualizarConductor(Conductor^ conductor)
             conductorDB->ListDB[i]->Anho_experiencia = conductor->Anho_experiencia;
             conductorDB->ListDB[i]->Numero_telefono = conductor->Numero_telefono;
             conductorDB->ListDB[i]->Numero_licencia = conductor->Numero_licencia;
-
+            conductorDB->GuardarEnArchivoBinario();
             break;
         }
     }
@@ -92,6 +93,7 @@ void BoletoManager::EliminarConductor(String^ dni)
         if (conductorDB->ListDB[i]->Dni == dni) {
             //eliminar ese elemento
             conductorDB->ListDB->RemoveAt(i);
+            conductorDB->GuardarEnArchivoBinario();
             break;
         }
     }
@@ -100,6 +102,7 @@ void BoletoManager::EliminarConductor(String^ dni)
 //Conductor^ BoletoController::BoletoManager::BuscarConductorPorDni(String^ dni)
 Conductor^ BoletoManager::BuscarConductorPorDni(String^ dni)
 {
+    conductorDB->ExtraerDeArchivoBinario();
     for (int i = 0; i < conductorDB->ListDB->Count; i++) {
         if (conductorDB->ListDB[i]->Dni == dni) {
             return conductorDB->ListDB[i];
@@ -110,6 +113,7 @@ Conductor^ BoletoManager::BuscarConductorPorDni(String^ dni)
 //List<Conductor^>^ BoletoController::BoletoManager::MostrarTodosConductores()
 List<Conductor^>^ BoletoManager::MostrarTodosConductores()
 {
+    conductorDB->ExtraerDeArchivoBinario();
     return conductorDB->ListDB;
 }
 
@@ -117,6 +121,7 @@ List<Conductor^>^ BoletoManager::MostrarTodosConductores()
 void BoletoManager::AgregarVendedor(Vendedor^ vendedor)
 {
     vendedorDB->ListDB->Add(vendedor);
+    vendedorDB->GuardarEnArchivoBinario();
 }
 
 //void BoletoController::BoletoManager::ActualizarVendedor(Vendedor^ vendedor)
@@ -131,7 +136,7 @@ void BoletoManager::ActualizarVendedor(Vendedor^ vendedor)
             vendedorDB->ListDB[i]->Contrasenha = vendedor->Contrasenha;
             vendedorDB->ListDB[i]->Email = vendedor->Email;
             vendedorDB->ListDB[i]->Centro_estudios = vendedor->Centro_estudios;
-
+            vendedorDB->GuardarEnArchivoBinario();
             break;
         }
     }
@@ -144,6 +149,7 @@ void BoletoManager::EliminarVendedor(String^ dni)
         if (vendedorDB->ListDB[i]->Dni == dni) {
             //eliminar ese elemento
             vendedorDB->ListDB->RemoveAt(i);
+            vendedorDB->GuardarEnArchivoBinario();
             break;
         }
     }
@@ -152,6 +158,7 @@ void BoletoManager::EliminarVendedor(String^ dni)
 //Vendedor^ BoletoController::BoletoManager::BuscarVendedorPorDni(String^ dni)
 Vendedor^ BoletoManager::BuscarVendedorPorDni(String^ dni)
 {
+    vendedorDB->ExtraerDeArchivoBinario();
     for (int i = 0; i < vendedorDB->ListDB->Count; i++) {
         if (vendedorDB->ListDB[i]->Dni == dni) {
             return vendedorDB->ListDB[i];
@@ -162,6 +169,7 @@ Vendedor^ BoletoManager::BuscarVendedorPorDni(String^ dni)
 //List<Vendedor^>^ BoletoController::BoletoManager::MostrarTodosVendedores()
 List<Vendedor^>^ BoletoManager::MostrarTodosVendedores()
 {
+    vendedorDB->ExtraerDeArchivoBinario();
     return vendedorDB->ListDB;
 }
 
@@ -169,6 +177,7 @@ List<Vendedor^>^ BoletoManager::MostrarTodosVendedores()
 void BoletoManager::AgregarAdministrador(Administrador^ administrador)
 {
     administradorDB->ListDB->Add(administrador);
+    administradorDB->GuardarEnArchivoBinario();
 }
 
 //void BoletoController::BoletoManager::ActualizarAdministrador(Administrador^ administrador)
@@ -182,6 +191,7 @@ void BoletoManager::ActualizarAdministrador(Administrador^ administrador)
             administradorDB->ListDB[i]->Contrasenha = administrador->Contrasenha;
             administradorDB->ListDB[i]->Fecha_nacimiento = administrador->Fecha_nacimiento;
             administradorDB->ListDB[i]->Numero_telefono = administrador->Numero_telefono;
+            administradorDB->GuardarEnArchivoBinario();
             break;
         }
     }
@@ -194,6 +204,7 @@ void BoletoManager::EliminarAdministrador(String^ dni)
         if (administradorDB->ListDB[i]->Dni == dni) {
             //eliminar ese elemento
             administradorDB->ListDB->RemoveAt(i);
+            administradorDB->GuardarEnArchivoBinario();
             break;
         }
     }
@@ -202,6 +213,7 @@ void BoletoManager::EliminarAdministrador(String^ dni)
 //Administrador^ BoletoController::BoletoManager::BuscarAdministradorPorDni(String^ dni)
 Administrador^ BoletoManager::BuscarAdministradorPorDni(String^ dni)
 {
+    administradorDB->ExtraerDeArchivoBinario();
     for (int i = 0; i < administradorDB->ListDB->Count; i++) {
         if (administradorDB->ListDB[i]->Dni == dni) {
             return administradorDB->ListDB[i];
@@ -212,6 +224,7 @@ Administrador^ BoletoManager::BuscarAdministradorPorDni(String^ dni)
 //List<Administrador^>^ BoletoController::BoletoManager::MostrarTodosAdministradores()
 List<Administrador^>^ BoletoManager::MostrarTodosAdministradores()
 {
+    administradorDB->ExtraerDeArchivoBinario();
     return administradorDB->ListDB;
 }
 

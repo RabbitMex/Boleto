@@ -259,6 +259,7 @@ namespace BoletoView {
 			this->Controls->Add(this->button1);
 			this->Name = L"PasajeroForm";
 			this->Text = L"Ventana Pasajeros";
+			this->Load += gcnew System::EventHandler(this, &PasajeroForm::PasajeroForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
@@ -368,5 +369,8 @@ namespace BoletoView {
 			radioButton1->Checked = false;
 			radioButton2->Checked = false;
 		}
+	private: System::Void PasajeroForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		llenarTablaPasajeros();
+	}
 };
 }
