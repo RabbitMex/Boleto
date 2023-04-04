@@ -4,17 +4,19 @@
 using namespace System::IO;//clases para el flujo de entrada y salida
 using namespace System::Runtime::Serialization;
 using namespace System::Runtime::Serialization::Formatters::Binary;
-
+using namespace BoletoController;
 //using namespace BoletoController::BoletoManager;
 
-void BoletoController::BoletoManager::AgregarPasajero(Pasajero^ pasajero)
+//void BoletoController::BoletoManager::AgregarPasajero(Pasajero^ pasajero)
+void BoletoManager::AgregarPasajero(Pasajero^ pasajero)
 //void AgregarPasajero(Pasajero^ pasajero)
 {
     pasajeroDB->ListDB->Add(pasajero);
     pasajeroDB->GuardarEnArchivoBinario();
 }
 
-void BoletoController::BoletoManager::ActualizarPasajero(Pasajero^ pasajero)
+//void BoletoController::BoletoManager::ActualizarPasajero(Pasajero^ pasajero)
+void BoletoManager::ActualizarPasajero(Pasajero^ pasajero)
 {
     for (int i = 0; i < pasajeroDB->ListDB->Count; i++) {
         if (pasajeroDB->ListDB[i]->Dni == pasajero->Dni) {
@@ -27,7 +29,8 @@ void BoletoController::BoletoManager::ActualizarPasajero(Pasajero^ pasajero)
     }
 }
 
-void BoletoController::BoletoManager::EliminarPasajero(String^ dni)
+//void BoletoController::BoletoManager::EliminarPasajero(String^ dni)
+void BoletoManager::EliminarPasajero(String^ dni)
 {
     for (int i = 0; i < pasajeroDB->ListDB->Count; i++) {
         if ( pasajeroDB->ListDB[i]->Dni == dni) {
@@ -39,7 +42,8 @@ void BoletoController::BoletoManager::EliminarPasajero(String^ dni)
     }
 }
 
-Pasajero^ BoletoController::BoletoManager::BuscarPasajeroPorDni(String^ dni)
+//Pasajero^ BoletoController::BoletoManager::BuscarPasajeroPorDni(String^ dni)
+Pasajero^ BoletoManager::BuscarPasajeroPorDni(String^ dni)
 {
     pasajeroDB->ExtraerDeArchivoBinario();
     for (int i = 0; i < pasajeroDB->ListDB->Count; i++) {
@@ -49,18 +53,21 @@ Pasajero^ BoletoController::BoletoManager::BuscarPasajeroPorDni(String^ dni)
     }
 }
 
-List<Pasajero^>^ BoletoController::BoletoManager::MostrarTodosPasajeros()
+//List<Pasajero^>^ BoletoController::BoletoManager::MostrarTodosPasajeros()
+List<Pasajero^>^ BoletoManager::MostrarTodosPasajeros()
 {
     pasajeroDB->ExtraerDeArchivoBinario();
     return pasajeroDB->ListDB;
 }
 
-void BoletoController::BoletoManager::AgregarConductor(Conductor^ conductor)
+//void BoletoController::BoletoManager::AgregarConductor(Conductor^ conductor)
+void BoletoManager::AgregarConductor(Conductor^ conductor)
 {
     conductorDB->ListDB->Add(conductor);
 }
 
-void BoletoController::BoletoManager::ActualizarConductor(Conductor^ conductor)
+//void BoletoController::BoletoManager::ActualizarConductor(Conductor^ conductor)
+void BoletoManager::ActualizarConductor(Conductor^ conductor)
 {
     for (int i = 0; i < conductorDB->ListDB->Count; i++) {
         if (conductorDB->ListDB[i]->Dni == conductor->Dni) {
@@ -78,7 +85,8 @@ void BoletoController::BoletoManager::ActualizarConductor(Conductor^ conductor)
     }
 }
 
-void BoletoController::BoletoManager::EliminarConductor(String^ dni)
+//void BoletoController::BoletoManager::EliminarConductor(String^ dni)
+void BoletoManager::EliminarConductor(String^ dni)
 {
     for (int i = 0; i < conductorDB->ListDB->Count; i++) {
         if (conductorDB->ListDB[i]->Dni == dni) {
@@ -89,7 +97,8 @@ void BoletoController::BoletoManager::EliminarConductor(String^ dni)
     }
 }
 
-Conductor^ BoletoController::BoletoManager::BuscarConductorPorDni(String^ dni)
+//Conductor^ BoletoController::BoletoManager::BuscarConductorPorDni(String^ dni)
+Conductor^ BoletoManager::BuscarConductorPorDni(String^ dni)
 {
     for (int i = 0; i < conductorDB->ListDB->Count; i++) {
         if (conductorDB->ListDB[i]->Dni == dni) {
@@ -98,17 +107,20 @@ Conductor^ BoletoController::BoletoManager::BuscarConductorPorDni(String^ dni)
     }
 }
 
-List<Conductor^>^ BoletoController::BoletoManager::MostrarTodosConductores()
+//List<Conductor^>^ BoletoController::BoletoManager::MostrarTodosConductores()
+List<Conductor^>^ BoletoManager::MostrarTodosConductores()
 {
     return conductorDB->ListDB;
 }
 
-void BoletoController::BoletoManager::AgregarVendedor(Vendedor^ vendedor)
+//void BoletoController::BoletoManager::AgregarVendedor(Vendedor^ vendedor)
+void BoletoManager::AgregarVendedor(Vendedor^ vendedor)
 {
     vendedorDB->ListDB->Add(vendedor);
 }
 
-void BoletoController::BoletoManager::ActualizarVendedor(Vendedor^ vendedor)
+//void BoletoController::BoletoManager::ActualizarVendedor(Vendedor^ vendedor)
+void BoletoManager::ActualizarVendedor(Vendedor^ vendedor)
 {
     for (int i = 0; i < vendedorDB->ListDB->Count; i++) {
         if (vendedorDB->ListDB[i]->Dni == vendedor->Dni) {
@@ -125,7 +137,8 @@ void BoletoController::BoletoManager::ActualizarVendedor(Vendedor^ vendedor)
     }
 }
 
-void BoletoController::BoletoManager::EliminarVendedor(String^ dni)
+//void BoletoController::BoletoManager::EliminarVendedor(String^ dni)
+void BoletoManager::EliminarVendedor(String^ dni)
 {
     for (int i = 0; i < vendedorDB->ListDB->Count; i++) {
         if (vendedorDB->ListDB[i]->Dni == dni) {
@@ -136,7 +149,8 @@ void BoletoController::BoletoManager::EliminarVendedor(String^ dni)
     }
 }
 
-Vendedor^ BoletoController::BoletoManager::BuscarVendedorPorDni(String^ dni)
+//Vendedor^ BoletoController::BoletoManager::BuscarVendedorPorDni(String^ dni)
+Vendedor^ BoletoManager::BuscarVendedorPorDni(String^ dni)
 {
     for (int i = 0; i < vendedorDB->ListDB->Count; i++) {
         if (vendedorDB->ListDB[i]->Dni == dni) {
@@ -145,17 +159,20 @@ Vendedor^ BoletoController::BoletoManager::BuscarVendedorPorDni(String^ dni)
     }
 }
 
-List<Vendedor^>^ BoletoController::BoletoManager::MostrarTodosVendedores()
+//List<Vendedor^>^ BoletoController::BoletoManager::MostrarTodosVendedores()
+List<Vendedor^>^ BoletoManager::MostrarTodosVendedores()
 {
     return vendedorDB->ListDB;
 }
 
-void BoletoController::BoletoManager::AgregarAdministrador(Administrador^ administrador)
+//void BoletoController::BoletoManager::AgregarAdministrador(Administrador^ administrador)
+void BoletoManager::AgregarAdministrador(Administrador^ administrador)
 {
     administradorDB->ListDB->Add(administrador);
 }
 
-void BoletoController::BoletoManager::ActualizarAdministrador(Administrador^ administrador)
+//void BoletoController::BoletoManager::ActualizarAdministrador(Administrador^ administrador)
+void BoletoManager::ActualizarAdministrador(Administrador^ administrador)
 {
     for (int i = 0; i < administradorDB->ListDB->Count; i++) {
         if (administradorDB->ListDB[i]->Dni == administrador->Dni) {
@@ -170,7 +187,8 @@ void BoletoController::BoletoManager::ActualizarAdministrador(Administrador^ adm
     }
 }
 
-void BoletoController::BoletoManager::EliminarAdministrador(String^ dni)
+//void BoletoController::BoletoManager::EliminarAdministrador(String^ dni)
+void BoletoManager::EliminarAdministrador(String^ dni)
 {
     for (int i = 0; i < administradorDB->ListDB->Count; i++) {
         if (administradorDB->ListDB[i]->Dni == dni) {
@@ -181,7 +199,8 @@ void BoletoController::BoletoManager::EliminarAdministrador(String^ dni)
     }
 }
 
-Administrador^ BoletoController::BoletoManager::BuscarAdministradorPorDni(String^ dni)
+//Administrador^ BoletoController::BoletoManager::BuscarAdministradorPorDni(String^ dni)
+Administrador^ BoletoManager::BuscarAdministradorPorDni(String^ dni)
 {
     for (int i = 0; i < administradorDB->ListDB->Count; i++) {
         if (administradorDB->ListDB[i]->Dni == dni) {
@@ -190,12 +209,14 @@ Administrador^ BoletoController::BoletoManager::BuscarAdministradorPorDni(String
     }
 }
 
-List<Administrador^>^ BoletoController::BoletoManager::MostrarTodosAdministradores()
+//List<Administrador^>^ BoletoController::BoletoManager::MostrarTodosAdministradores()
+List<Administrador^>^ BoletoManager::MostrarTodosAdministradores()
 {
     return administradorDB->ListDB;
 }
 
-void BoletoController::PasajeroDB::GuardarEnArchivoBinario()
+//void BoletoController::PasajeroDB::GuardarEnArchivoBinario()
+void PasajeroDB::GuardarEnArchivoBinario()
 {
     Stream^ stream = File::Open("pasajero.bin", FileMode::Create);
     BinaryFormatter^ bFormatter = gcnew BinaryFormatter();
@@ -203,7 +224,8 @@ void BoletoController::PasajeroDB::GuardarEnArchivoBinario()
     stream->Close();
 }
 
-void BoletoController::PasajeroDB::ExtraerDeArchivoBinario()
+//void BoletoController::PasajeroDB::ExtraerDeArchivoBinario()
+void PasajeroDB::ExtraerDeArchivoBinario()
 {
     //Primero verificar si el archivo existe
     if (File::Exists("pasajero.bin")) {
@@ -214,7 +236,8 @@ void BoletoController::PasajeroDB::ExtraerDeArchivoBinario()
     }
 }
 
-void BoletoController::VendedorDB::GuardarEnArchivoBinario()
+//void BoletoController::VendedorDB::GuardarEnArchivoBinario()
+void VendedorDB::GuardarEnArchivoBinario()
 {
     Stream^ stream = File::Open("vendedor.bin", FileMode::Create);
     BinaryFormatter^ bFormatter = gcnew BinaryFormatter();
@@ -222,7 +245,8 @@ void BoletoController::VendedorDB::GuardarEnArchivoBinario()
     stream->Close();
 }
 
-void BoletoController::VendedorDB::ExtraerDeArchivoBinario()
+//void BoletoController::VendedorDB::ExtraerDeArchivoBinario()
+void VendedorDB::ExtraerDeArchivoBinario()
 {
     //Primero verificar si el archivo existe
     if (File::Exists("vendedor.bin")) {
@@ -233,7 +257,8 @@ void BoletoController::VendedorDB::ExtraerDeArchivoBinario()
     }
 }
 
-void BoletoController::ConductorDB::GuardarEnArchivoBinario()
+//void BoletoController::ConductorDB::GuardarEnArchivoBinario()
+void ConductorDB::GuardarEnArchivoBinario()
 {
     Stream^ stream = File::Open("conductor.bin", FileMode::Create);
     BinaryFormatter^ bFormatter = gcnew BinaryFormatter();
@@ -241,7 +266,8 @@ void BoletoController::ConductorDB::GuardarEnArchivoBinario()
     stream->Close();
 }
 
-void BoletoController::ConductorDB::ExtraerDeArchivoBinario()
+//void BoletoController::ConductorDB::ExtraerDeArchivoBinario()
+void ConductorDB::ExtraerDeArchivoBinario()
 {
     //Primero verificar si el archivo existe
     if (File::Exists("conductor.bin")) {
@@ -252,7 +278,8 @@ void BoletoController::ConductorDB::ExtraerDeArchivoBinario()
     }
 }
 
-void BoletoController::AdministradorDB::GuardarEnArchivoBinario()
+//void BoletoController::AdministradorDB::GuardarEnArchivoBinario()
+void AdministradorDB::GuardarEnArchivoBinario()
 {
     Stream^ stream = File::Open("administrador.bin", FileMode::Create);
     BinaryFormatter^ bFormatter = gcnew BinaryFormatter();
@@ -260,7 +287,8 @@ void BoletoController::AdministradorDB::GuardarEnArchivoBinario()
     stream->Close();
 }
 
-void BoletoController::AdministradorDB::ExtraerDeArchivoBinario()
+//void BoletoController::AdministradorDB::ExtraerDeArchivoBinario()
+void AdministradorDB::ExtraerDeArchivoBinario()
 {
     //Primero verificar si el archivo existe
     if (File::Exists("administrador.bin")) {
