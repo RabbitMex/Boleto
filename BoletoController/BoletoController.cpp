@@ -311,3 +311,65 @@ void AdministradorDB::ExtraerDeArchivoBinario()
         stream->Close();
     }
 }
+
+/**
+* Agrega un viaje a la ListDB
+*/
+void BoletoController::BoletoManager::AgregarViaje(Viaje^ viaje)
+{
+    viajeDB->ListDB->Add(viaje);
+    viajeDB->GuardarEnArchivoBinario();
+}
+
+/**
+* Actualiza un viaje
+*/
+void BoletoController::BoletoManager::ActualizarViaje(Viaje^ viaje)
+{
+    for (int i = 0; i < viajeDB->ListDB->Count; i++) {
+        if (viajeDB->ListDB[i]->codigo == viaje->codigo) {
+            viajeDB->ListDB[i]->Origen = viaje->Origen;
+            viajeDB->ListDB[i]->Destino = viaje->Destino;
+            viajeDB->ListDB[i]->Fecha_viaje = viaje->Fecha_viaje;
+            viajeDB->ListDB[i]->Hora_viaje = viaje->Hora_viaje;
+            viajeDB->ListDB[i]->Conductor = viaje->Conductor;
+            viajeDB->ListDB[i]->Numero_asientos = viaje->Numero_asientos;
+            viajeDB->GuardarEnArchivoBinario();
+            break;
+        }
+    }
+}
+
+Viaje^ BoletoController::BoletoManager::BuscarViajePorCodigo(int codigo)
+{
+    viajeDB->ExtraerDeArchivoBinario();
+    for (int i = 0; i < viajeDB->ListDB->Count; i++) {
+        if (viajeDB->ListDB[i]->codigo == codigo) {
+            return viajeDB->ListDB[i];
+        }
+    }
+}
+
+List<Viaje^>^ BoletoController::BoletoManager::MostrarTodosViajes()
+{
+    viajeDB->ExtraerDeArchivoBinario();
+    return viajeDB->ListDB;
+}
+
+void BoletoController::ViajeDB::GuardarEnArchivoBinario()
+{
+    Stream^ stream = File::Open("viaje.bin", FileMode::Create);
+    BinaryFormatter^ bFormatter = gcnew BinaryFormatter();
+    bFormatter->Serialize(stream, ListDB);
+    stream->Close();
+}
+
+void BoletoController::ViajeDB::ExtraerDeArchivoBinario()
+{
+    if (File::Exists("viaje.bin")) {
+        Stream^ stream = File::Open("viaje.bin", FileMode::Open);
+        BinaryFormatter^ binary = gcnew BinaryFormatter();
+        ListDB = (List<Viaje^>^) binary->Deserialize(stream);
+        stream->Close();
+    }
+}

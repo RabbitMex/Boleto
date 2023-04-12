@@ -123,12 +123,20 @@
   <ItemGroup>
     <ClCompile Include="PasajeroForm.cpp" />
     <ClCompile Include="TrabajadorForm.cpp" />
+    <ClCompile Include="UsuarioAdministradorForm.cpp" />
+    <ClCompile Include="ViajeForm1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PasajeroForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="TrabajadorForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="UsuarioAdministradorForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ViajeForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -146,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TrabajadorForm.resx">
       <DependentUpon>TrabajadorForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuarioAdministradorForm.resx">
+      <DependentUpon>UsuarioAdministradorForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViajeForm.resx">
+      <DependentUpon>ViajeForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
