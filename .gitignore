@@ -364,6 +364,3 @@ FodyWeavers.xsd
 
 # Encontrados
 *.bin
-*.vcxproj
-*.vcxproj.filters
-*.resx

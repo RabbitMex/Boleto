@@ -124,7 +124,7 @@
     <ClCompile Include="PasajeroForm.cpp" />
     <ClCompile Include="TrabajadorForm.cpp" />
     <ClCompile Include="UsuarioAdministradorForm.cpp" />
-    <ClCompile Include="ViajeForm1.cpp" />
+    <ClCompile Include="ViajeForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PasajeroForm.h">

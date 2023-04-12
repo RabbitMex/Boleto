@@ -21,10 +21,10 @@
     <ClCompile Include="TrabajadorForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="ViajeForm1.cpp">
+    <ClCompile Include="UsuarioAdministradorForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="UsuarioAdministradorForm.cpp">
+    <ClCompile Include="ViajeForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

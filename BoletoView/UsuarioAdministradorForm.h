@@ -41,9 +41,9 @@ namespace BoletoView {
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ pasajerosToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ trabajadoresToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ vendedorToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ administradorToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ conductorToolStripMenuItem;
+
+
+
 	private: System::Windows::Forms::ToolStripMenuItem^ viajeToolStripMenuItem;
 	protected:
 
@@ -63,9 +63,6 @@ namespace BoletoView {
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->pasajerosToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->trabajadoresToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->vendedorToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->administradorToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->conductorToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->viajeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -78,7 +75,7 @@ namespace BoletoView {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(593, 24);
+			this->menuStrip1->Size = System::Drawing::Size(442, 24);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -91,47 +88,27 @@ namespace BoletoView {
 			// 
 			// trabajadoresToolStripMenuItem
 			// 
-			this->trabajadoresToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->vendedorToolStripMenuItem,
-					this->administradorToolStripMenuItem, this->conductorToolStripMenuItem
-			});
 			this->trabajadoresToolStripMenuItem->Name = L"trabajadoresToolStripMenuItem";
 			this->trabajadoresToolStripMenuItem->Size = System::Drawing::Size(85, 20);
 			this->trabajadoresToolStripMenuItem->Text = L"Trabajadores";
-			// 
-			// vendedorToolStripMenuItem
-			// 
-			this->vendedorToolStripMenuItem->Name = L"vendedorToolStripMenuItem";
-			this->vendedorToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->vendedorToolStripMenuItem->Text = L"Vendedor";
-			// 
-			// administradorToolStripMenuItem
-			// 
-			this->administradorToolStripMenuItem->Name = L"administradorToolStripMenuItem";
-			this->administradorToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->administradorToolStripMenuItem->Text = L"Administrador";
-			// 
-			// conductorToolStripMenuItem
-			// 
-			this->conductorToolStripMenuItem->Name = L"conductorToolStripMenuItem";
-			this->conductorToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->conductorToolStripMenuItem->Text = L"Conductor";
+			this->trabajadoresToolStripMenuItem->Click += gcnew System::EventHandler(this, &UsuarioAdministradorForm::trabajadoresToolStripMenuItem_Click);
 			// 
 			// viajeToolStripMenuItem
 			// 
 			this->viajeToolStripMenuItem->Name = L"viajeToolStripMenuItem";
 			this->viajeToolStripMenuItem->Size = System::Drawing::Size(44, 20);
 			this->viajeToolStripMenuItem->Text = L"Viaje";
+			this->viajeToolStripMenuItem->Click += gcnew System::EventHandler(this, &UsuarioAdministradorForm::viajeToolStripMenuItem_Click);
 			// 
-			// UsuarioAdministradorForm
+			// UsuarioAdministradorForm1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(593, 344);
+			this->ClientSize = System::Drawing::Size(442, 323);
 			this->Controls->Add(this->menuStrip1);
 			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
-			this->Name = L"UsuarioAdministradorForm";
+			this->Name = L"UsuarioAdministradorForm1";
 			this->Text = L"Usuario Administrador";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
@@ -144,6 +121,16 @@ namespace BoletoView {
 		PasajeroForm^ ventana_pasajero = gcnew PasajeroForm();
 		ventana_pasajero->MdiParent = this;
 		ventana_pasajero->Show();
+	}
+	private: System::Void trabajadoresToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		TrabajadorForm^ ventana_trabajador = gcnew TrabajadorForm();
+		ventana_trabajador->MdiParent = this;
+		ventana_trabajador->Show();
+	}
+	private: System::Void viajeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		ViajeForm^ ventana_viaje = gcnew ViajeForm();
+		ventana_viaje->MdiParent = this;
+		ventana_viaje->Show();
 	}
 };
 }
