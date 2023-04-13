@@ -41,5 +41,8 @@
     <ClInclude Include="UsuarioAdministradorForm.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="LlenarComboBox.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

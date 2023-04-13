@@ -127,6 +127,7 @@
     <ClCompile Include="ViajeForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LlenarComboBox.h" />
     <ClInclude Include="PasajeroForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

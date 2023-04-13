@@ -1,4 +1,5 @@
 #pragma once
+#include "LlenarComboBox.h"
 
 namespace BoletoView {
 
@@ -294,6 +295,7 @@ namespace BoletoView {
 
 		}
 #pragma endregion
+	//Boton de Agregar Viaje
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Viaje^ viaje = gcnew Viaje();
 		viaje->codigo = Int32::Parse(textBox1->Text);
@@ -302,12 +304,14 @@ namespace BoletoView {
 		viaje->Fecha_viaje = DateTime::Parse(dateTimePicker1->Value.ToShortDateString());
 		viaje->Hora_viaje = DateTime::Parse(dateTimePicker2->Value.ToShortTimeString());
 		viaje->Numero_asientos = Int32::Parse(textBox4->Text);
-		viaje->Conductor = BoletoManager::BuscarConductorPorDni(comboBox1->Text);
+		//viaje->Conductor = BoletoManager::BuscarConductorPorDni(comboBox1->Text);
+		viaje->Conductor = BoletoManager::BuscarConductorPorDni(""+((Item^)comboBox1->SelectedItem)->Valor);
 
 		BoletoManager::AgregarViaje(viaje);
 		LlenarTablaViajes();
 		LimpiarDatos();
 	}
+	//Boton de Actualizar viaje
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		Viaje^ viaje = gcnew Viaje();
 		viaje->codigo = Int32::Parse(textBox1->Text);
@@ -316,7 +320,8 @@ namespace BoletoView {
 		viaje->Fecha_viaje = DateTime::Parse(dateTimePicker1->Value.ToShortDateString());
 		viaje->Hora_viaje = DateTime::Parse(dateTimePicker2->Value.ToShortTimeString());
 		viaje->Numero_asientos = Int32::Parse(textBox4->Text);
-		viaje->Conductor = BoletoManager::BuscarConductorPorDni(comboBox1->Text);
+		//viaje->Conductor = BoletoManager::BuscarConductorPorDni(comboBox1->Text);
+		viaje->Conductor = BoletoManager::BuscarConductorPorDni("" + ((Item^)comboBox1->SelectedItem)->Valor);
 
 		BoletoManager::ActualizarViaje(viaje);
 		LlenarTablaViajes();
@@ -326,7 +331,7 @@ namespace BoletoView {
 	void LlenarTablaViajes() {
 		List<Viaje^>^ lista = BoletoManager::MostrarTodosViajes();
 		dataGridView1->Rows->Clear();
-		for (int i = 0; lista->Count; i++) {
+		for (int i = 0; i<lista->Count; i++) {
 			dataGridView1->Rows->Add(
 				gcnew array<String^>{
 				""+lista[i]->codigo,
@@ -348,6 +353,16 @@ namespace BoletoView {
 	}
 	private: System::Void ViajeForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		LlenarTablaViajes();
+		llenarListaConductor();
+	}
+	public:
+	void llenarListaConductor() {
+		List<Conductor^>^ listaConductor = BoletoManager::MostrarTodosConductores();
+		comboBox1->Items->Clear();
+		for (int i = 0; i < listaConductor->Count; i++) {
+			//comboBox1->Items->Add(listaConductor[i]->Dni);
+			comboBox1->Items->Add(gcnew Item(listaConductor[i]->Nombre, Int32::Parse(listaConductor[i]->Dni)));
+		}
 	}
 };
 }
